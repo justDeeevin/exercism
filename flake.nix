@@ -11,6 +11,8 @@
         packages = with pkgs; [
           exercism
           gcc
+          ghc
+          stack
         ];
       };
     };
