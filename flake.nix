@@ -8,12 +8,17 @@
     in
     {
       devShell.x86_64-linux = pkgs.mkShell {
-        packages = with pkgs; [
-          exercism
-          gcc
-          ghc
-          stack
-        ];
+        packages =
+          with pkgs;
+          [
+            exercism
+            gcc
+            stack
+          ]
+          ++ (with pkgs.haskell.packages.ghc967; [
+            haskell-language-server
+            ghc
+          ]);
       };
     };
 }
